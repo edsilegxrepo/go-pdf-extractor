@@ -114,7 +114,7 @@ flowchart TB
 |------------|-------------------|
 | PDFs contain extractable text | No values extracted; null results returned |
 | Search pattern appears on single line | Multi-line patterns not matched |
-| mutool available and functional | Exit code 2 returned |
+| mutool available and functional | Exit code 9 returned |
 | Workspace directory is writable | N/A (only reads from workspace) |
 | Output directory is writable | Exit code 5 returned |
 | Filenames do not contain newlines | JSON output may be malformed |
@@ -195,7 +195,7 @@ flowchart TD
     VALIDATE -->|Invalid| ERR_CFG[Exit 1: ConfigError]
     VALIDATE -->|Path Error| ERR_PATH[Exit 3: PathError]
     VALIDATE -->|Valid| MUTOOL[Find mutool Binary]
-    MUTOOL -->|Not Found| ERR_MUT[Exit 2: MutoolNotFound]
+    MUTOOL -->|Not Found| ERR_MUT[Exit 9: MutoolNotFound]
     MUTOOL -->|Found| GLOB[Find Matching Files]
     GLOB -->|Pattern Error| ERR_PAT[Exit 4: PatternError]
     GLOB -->|Success| PROCESS[Process Files]

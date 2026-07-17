@@ -187,7 +187,7 @@ Total: **118+ tests** covering all functionality.
 |------|----------|-------------------|
 | `TestRun_ExitCodes/missing_required_flag` | Missing required CLI flag | 1 (ConfigError) |
 | `TestRun_ExitCodes/workspace_path_not_found` | Path does not exist | 3 (PathError) |
-| `TestRun_ExitCodes/mutool_not_found` | mutool binary not found | 2 (MutoolNotFound) |
+| `TestRun_ExitCodes/mutool_not_found` | mutool binary not found | 9 (MutoolNotFound) |
 | `TestRun_ExitCodes/invalid_glob_pattern` | Invalid file pattern | 4 (PatternError) |
 | `TestRun_ExitCodes/output_path_error` | Cannot write output | 5 (OutputError) |
 | `TestRun_ExitSuccess` | All files processed | 0 (Success) |
@@ -200,7 +200,7 @@ Total: **118+ tests** covering all functionality.
 | `TestDetect_PathNotReadable` | Path does not exist or not readable | 3 (PathError) |
 | `TestDetect_PathNotDirectory` | Path is a file, not a directory | 3 (PathError) |
 | `TestDetect_NoFilesFound` | No files matching pattern | 6 (NoFilesFound) |
-| `TestDetect_MutoolNotFound` | mutool binary not found | 2 (MutoolNotFound) |
+| `TestDetect_MutoolNotFound` | mutool binary not found | 9 (MutoolNotFound) |
 | `TestDetect_MutoolExecFail` | mutool binary exists but fails execution | 8 (MutoolExecFail) |
 | `TestDetect_SearchNotFound` | Search pattern not in any file | 7 (SearchNotFound) |
 | `TestDetect_OutputNotWritable` | Output path not writable | 5 (OutputError) |

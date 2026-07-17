@@ -45,15 +45,16 @@ const (
 
 	// Exit codes provide diagnostic information for integration with job schedulers.
 	// Each code maps to a specific failure category for automated error handling.
-	ExitSuccess        = 0  // All files processed successfully
-	ExitConfigError    = 1  // Invalid configuration or missing required flags
-	ExitMutoolNotFound = 2  // mutool binary not found in any configured location
+	ExitSuccess     = 0 // All files processed successfully
+	ExitConfigError = 1 // Invalid configuration or missing required flags
+	// Note: Exit code 2 is reserved by Go's standard flag package for flag parsing/syntax errors.
 	ExitPathError      = 3  // Workspace path not found or not a directory
 	ExitPatternError   = 4  // Invalid glob pattern syntax
 	ExitOutputError    = 5  // Cannot create or write to output file
 	ExitNoFilesFound   = 6  // No files matching the pattern found
 	ExitSearchNotFound = 7  // Search pattern not found in any matching file
 	ExitMutoolExecFail = 8  // mutool binary failed execution test
+	ExitMutoolNotFound = 9  // mutool binary not found in any configured location
 	ExitPartialFailure = 10 // Some PDFs failed processing (output still written)
 )
 

@@ -247,17 +247,20 @@ go-pdf-extractor [OPTIONS]
 
 ### 4.5 Exit Codes
 
+The tool returns detailed exit codes to allow orchestration platforms (e.g., GoAnywhere MFT, Jenkins) to programmatically detect and respond to failures.
+
 | Code | Name | Description |
 |------|------|-------------|
 | 0 | Success | All files processed without errors |
 | 1 | ConfigError | Invalid or missing required arguments |
-| 2 | MutoolNotFound | mutool binary not found or invalid |
+| 2 | - | Reserved by Go's standard `flag` library for flag syntax/parsing errors |
 | 3 | PathError | Workspace path does not exist or is not a directory |
 | 4 | PatternError | Invalid glob pattern syntax |
 | 5 | OutputError | Cannot create or write output file |
 | 6 | NoFilesFound | No files matching the pattern found |
 | 7 | SearchNotFound | Search pattern not found in any file (detect mode only) |
 | 8 | MutoolExecFail | mutool binary failed execution test |
+| 9 | MutoolNotFound | mutool binary not found or invalid |
 | 10 | PartialFailure | Some files failed processing (output still written) |
 
 ### 4.6 Output Formats
@@ -465,13 +468,14 @@ go-pdf-extractor \
 case $? in
   0)  echo "All files processed successfully" ;;
   1)  echo "Configuration error" >&2; exit 1 ;;
-  2)  echo "mutool not found" >&2; exit 1 ;;
+  2)  echo "CLI syntax error / reserved" >&2; exit 1 ;;
   3)  echo "Workspace path error" >&2; exit 1 ;;
   4)  echo "Invalid file pattern" >&2; exit 1 ;;
   5)  echo "Cannot write output" >&2; exit 1 ;;
   6)  echo "No files matching pattern" >&2; exit 1 ;;
   7)  echo "Search pattern not found in any file" >&2; exit 1 ;;
   8)  echo "mutool execution failed" >&2; exit 1 ;;
+  9)  echo "mutool not found" >&2; exit 1 ;;
   10) echo "Some files failed; check output for errors" >&2 ;;
 esac
 ```

@@ -178,18 +178,9 @@ flowchart TB
 
 ### 6.1 Exit Codes
 
-| Code | Constant | Condition | Output Written |
-|------|----------|-----------|----------------|
-| 0 | ExitSuccess | All files processed without errors | Yes |
-| 1 | ExitConfigError | Invalid or missing CLI arguments | No |
-| 2 | ExitMutoolNotFound | mutool binary not found or invalid | No |
-| 3 | ExitPathError | Workspace path does not exist or is not a directory | No |
-| 4 | ExitPatternError | Invalid glob pattern syntax | No |
-| 5 | ExitOutputError | Cannot create or write to output file | No |
-| 6 | ExitNoFilesFound | No files matching pattern in workspace | No |
-| 7 | ExitSearchNotFound | Search pattern not found in any files (detect mode) | No |
-| 8 | ExitMutoolExecFail | mutool binary found but failed execution | No |
-| 10 | ExitPartialFailure | Some PDFs failed processing | Yes |
+The application returns detailed, diagnostic exit codes to enable seamless integration and automated error response in workflow orchestration tools (such as GoAnywhere MFT). Each exit code maps directly to a specific failure category (such as path readability, command syntax, or missing dependencies).
+
+For the complete list and detailed descriptions of all exit codes, please refer to the [Exit Codes section of the README.md](README.md#45-exit-codes).
 
 ### 6.2 Per-File Error Handling
 
