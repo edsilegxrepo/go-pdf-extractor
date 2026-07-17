@@ -2523,4 +2523,3 @@ func TestKillProcessGroup_Running(t *testing.T) {
 		t.Error("expected process to be terminated with error, but exit code was 0")
 	}
 }
-
