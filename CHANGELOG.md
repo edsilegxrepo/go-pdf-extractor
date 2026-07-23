@@ -40,5 +40,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Configurable timeout and worker count
 - Exit codes for integration with job schedulers
 
-[0.2.0]: https://github.com/edsilegxrepo/go-pdf-extract/releases/tag/v0.2.0
-[0.1.0]: https://github.com/edsilegxrepo/go-pdf-extract/releases/tag/v0.1.0
+[0.2.0]: https://github.com/edsilegxrepo/pdf-extractor/releases/tag/v0.2.0
+[0.1.0]: https://github.com/edsilegxrepo/pdf-extractor/releases/tag/v0.1.0
